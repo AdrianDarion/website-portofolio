@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/config/style.css">
+    <link rel="stylesheet" href="./firebase-auth/auth.css">
 </head>
 <body>
     <div class="custom-cursor"></div>
@@ -40,6 +41,7 @@
     </nav>
 
     <section id="home" class="hero-section">
+        <div id="auth-root"></div>
         <div class="floating-shapes">
             <div class="shape" style="width: 80px; height: 80px; border-radius: 50%;"></div>
             <div class="shape" style="width: 60px; height: 60px; border-radius: 50%;"></div>
@@ -705,5 +707,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/config/script.js"></script>
+    <script type="module">
+        import { initFirebaseAuthWidget } from './firebase-auth/auth.js';
+        import firebaseConfig from './firebase-auth/firebase-config.js';
+        initFirebaseAuthWidget({ firebaseConfig, mountId: 'auth-root' });
+    </script>
 </body>
 </html>
