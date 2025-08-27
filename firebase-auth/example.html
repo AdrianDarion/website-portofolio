@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firebase Auth Widget Demo</title>
+    <link rel="stylesheet" href="./auth.css">
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0 16px 40px; }
+      header { padding: 24px 0; }
+      h1 { margin: 0; font-size: 22px; }
+      p { color: #374151; }
+      .content { max-width: 720px; margin: 0 auto; }
+      .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin-top: 16px; }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <h1>Firebase Auth Widget Demo</h1>
+        <p>Use the floating button in the top-right to sign in/up.</p>
+      </header>
+
+      <div id="auth-root"></div>
+
+      <div class="card">
+        <h2>Protected Content (example)</h2>
+        <p>In a real app, you would check the Firebase Auth state and either show content or redirect. This demo only displays the auth UI.</p>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initFirebaseAuthWidget } from './auth.js';
+      import firebaseConfig from './firebase-config.js';
+
+      initFirebaseAuthWidget({ firebaseConfig, mountId: 'auth-root' });
+    </script>
+  </body>
+  </html>
+
